@@ -80,7 +80,7 @@ namespace Microsoft.Teams.Apps.CompanyCommunicator.Common.Repositories.Notificat
         /// <inheritdoc/>
         public async Task<IEnumerable<NotificationDataEntity>> GetMostRecentSentNotificationsAsync()
         {
-            var result = await this.GetAllAsync(NotificationDataTableNames.SentNotificationsPartition, 25);
+            var result = await this.GetAllAsync(NotificationDataTableNames.SentNotificationsPartition, 20);
 
             return result;
         }
@@ -109,10 +109,14 @@ namespace Microsoft.Teams.Apps.CompanyCommunicator.Common.Repositories.Notificat
                     Author = draftNotificationEntity.Author,
                     ButtonTitle = draftNotificationEntity.ButtonTitle,
                     ButtonLink = draftNotificationEntity.ButtonLink,
+                    Buttons = draftNotificationEntity.Buttons,
                     CreatedBy = draftNotificationEntity.CreatedBy,
                     CreatedDate = draftNotificationEntity.CreatedDate,
                     SentDate = null,
                     IsDraft = false,
+                    IsImportant = draftNotificationEntity.IsImportant,
+                    IsScheduled = draftNotificationEntity.IsScheduled,
+                    ScheduledDate = draftNotificationEntity.ScheduledDate,
                     Teams = draftNotificationEntity.Teams,
                     Rosters = draftNotificationEntity.Rosters,
                     Groups = draftNotificationEntity.Groups,
@@ -160,6 +164,8 @@ namespace Microsoft.Teams.Apps.CompanyCommunicator.Common.Repositories.Notificat
                     Author = notificationEntity.Author,
                     ButtonTitle = notificationEntity.ButtonTitle,
                     ButtonLink = notificationEntity.ButtonLink,
+                    Buttons = notificationEntity.Buttons,
+                    IsImportant = notificationEntity.IsImportant,
                     CreatedBy = createdBy,
                     CreatedDate = DateTime.UtcNow,
                     IsDraft = true,

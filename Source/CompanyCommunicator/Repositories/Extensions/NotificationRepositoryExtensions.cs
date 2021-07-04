@@ -44,11 +44,13 @@ namespace Microsoft.Teams.Apps.CompanyCommunicator.Repositories.Extensions
                 CreatedDate = DateTime.UtcNow,
                 IsDraft = true,
                 IsScheduled = notification.IsScheduled,
+                IsImportant = notification.IsImportant,
                 Teams = notification.Teams,
                 Rosters = notification.Rosters,
                 Groups = notification.Groups,
                 AllUsers = notification.AllUsers,
                 ScheduledDate = notification.ScheduledDate,
+                Buttons = notification.Buttons,
             };
 
             await notificationRepository.CreateOrUpdateAsync(notificationEntity);

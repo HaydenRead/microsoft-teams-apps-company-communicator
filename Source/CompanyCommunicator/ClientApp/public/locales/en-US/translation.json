@@ -92,6 +92,11 @@
   "ScheduledMessagesSectionTitle": "Scheduled messages",
   "EmptyScheduledMessages": "You have no scheduled messages.",
   "SendNow": "Send Now",
-  "ScheduledDate": "Scheduled to"
-
+  "ScheduledDate": "Scheduled to",
+  "Important": "Important Message",
+  "ImportantDescription": "This option flags the message as important. Recipients will receive the message and be notified with a Teams alert.",
+  "ScheduledSendDescription": "Select a date and time to schedule your message. Please schedule at least 30 minutes in the future.",
+  "Add": "Add",
+  "Buttons": "Buttons",
+  "NoButtons": "No buttons defined. Click (+) to include buttons and actions on the message."
 }
