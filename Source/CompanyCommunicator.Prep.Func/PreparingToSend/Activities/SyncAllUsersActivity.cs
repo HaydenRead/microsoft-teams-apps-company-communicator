@@ -107,7 +107,8 @@ namespace Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func.PreparingToSend
             {
                 tuple = await this.GetAllUsers(notificationId, deltaLink);
             }
-            catch (InvalidOperationException)
+            //catch (InvalidOperationException)
+			catch
             {
                 // If delta link is expired, this exception is caught.
                 // re-sync users wthout delta link.
